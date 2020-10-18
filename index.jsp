@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
 </head>
-<body>
+<body style="height: 100%;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">weFurnish</a>
@@ -35,8 +35,8 @@
             </div>
         </div>
     </nav>
-    <div class="container" style="margin-top: 5%;">
-        <h1>Search</h1>
+    <div class="container" style="margin-top: 7%;">
+        <h1 style="margin-bottom: 2%;">SEARCH</h1>
         <div class="row">
             <div class="col-md-12">
                 <table id="invtbl" class="table table-bordered" cellpadding="0" cellspacing="0" width="100%">
@@ -57,8 +57,7 @@
     <script src="component/jquery/jquery.js" type="text/javascript"></script>
     <script src="component/jquery/jquery.min.js" type="text/javascript"></script>
     <script src="component/jquery.validate.min.js" type="text/javascript"></script>
-    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-
+    <script src="component/DataTables/datatables.min.js"></script>
 
     <script>
         fetchAll();
@@ -77,8 +76,8 @@
                         "aoColumns":[
                             { "sTitle":"Product Name", "mData": "name" },
                             { "sTitle":"Product Type", "mData": "type" },
-                            { "sTitle":"seller", "mData": "seller" },
-                            { "sTitle":"Price", "mData": "price" },
+                            { "sTitle":"Seller", "mData": "seller" },
+                            { "sTitle":"Price (INR)", "mData": "price" },
                             {
                                 "data": "url",
                                 "render": function (data) {
@@ -87,10 +86,15 @@
                             }
                         ]
                     });
+                },
+                error: function(){
+                    alert("Connection Error");
                 }
             });
         }
     </script>
-
+    <footer style="margin-top: 6%;">
+        
+    </footer>
 </body>
 </html>
